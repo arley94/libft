@@ -36,7 +36,12 @@ FILES = ft_isalpha \
 						ft_putendl_fd \
 						ft_putnbr_fd \
 
+BONUS = ft_lstnew_bonus \
+							ft_lstadd_front_bonus \
+
 OBJ = $(FILES:%=%.o)
+
+BOBJ = $(BONUS:%=%.o)
 
 NAME = libft.a
 
@@ -45,6 +50,9 @@ $(NAME): $(OBJ)
 
 all: $(NAME)
 
+bonus: $(BOBJ)
+	ar -rc $(NAME) $^
+
 test: $(OBJ)
 	$(CC) -o $@ $^ $(CFLAGS)
 
@@ -52,11 +60,13 @@ test: $(OBJ)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 clean: 
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(BOBJ)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+bonus: 
 
 .PHONY: all, clean, fclean, re
