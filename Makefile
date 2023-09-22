@@ -38,6 +38,13 @@ FILES = ft_isalpha \
 
 BONUS = ft_lstnew_bonus \
 							ft_lstadd_front_bonus \
+							ft_lstsize_bonus \
+							ft_lstlast_bonus \
+							ft_lstadd_back_bonus \
+							ft_lstdelone_bonus \
+							ft_lstclear_bonus \
+							ft_lstiter_bonus \
+							ft_lstmap_bonus \
 
 OBJ = $(FILES:%=%.o)
 
@@ -53,7 +60,7 @@ all: $(NAME)
 bonus: $(BOBJ)
 	ar -rc $(NAME) $^
 
-test: $(OBJ)
+test: $(OBJ) $(BOBJ)
 	$(CC) -o $@ $^ $(CFLAGS)
 
 %.o: %.c $(DEPS)
