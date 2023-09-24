@@ -36,7 +36,7 @@ FILES = ft_isalpha \
 						ft_putendl_fd \
 						ft_putnbr_fd \
 
-BONUS = ft_lstnew_bonus \
+B_FILES = ft_lstnew_bonus \
 							ft_lstadd_front_bonus \
 							ft_lstsize_bonus \
 							ft_lstlast_bonus \
@@ -48,7 +48,7 @@ BONUS = ft_lstnew_bonus \
 
 OBJ = $(FILES:%=%.o)
 
-BOBJ = $(BONUS:%=%.o)
+B_OBJ = $(B_FILES:%=%.o)
 
 NAME = libft.a
 
@@ -57,23 +57,18 @@ $(NAME): $(OBJ)
 
 all: $(NAME)
 
-bonus: $(BOBJ)
+bonus: $(B_OBJ)
 	ar -rc $(NAME) $^
 
-test: $(OBJ) $(BOBJ)
-	$(CC) -o $@ $^ $(CFLAGS)
-
-%.o: %.c $(DEPS)
-	$(CC) -c -o $@ $< $(CFLAGS)
-
 clean: 
-	rm -f $(OBJ) $(BOBJ)
+	rm -f $(OBJ) $(B_OBJ)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-bonus: 
+%.o: %.c $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
 
-.PHONY: all, clean, fclean, re
+.PHONY: all bonus clean fclean re
