@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acoto-gu <acoto-gu@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: acoto-gu <acoto-gu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 17:40:14 by acoto-gu          #+#    #+#             */
-/*   Updated: 2023/09/18 17:58:38 by acoto-gu         ###   ########.fr       */
+/*   Updated: 2023/09/25 13:33:09 by acoto-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (i < n)
 	{
 		if (str[i] == char_c)
-			return ((void *)str + i);
+			return ((void *)(str + i));
 		i++;
 	}
 	return (NULL);
