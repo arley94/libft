@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acoto-gu <acoto-gu@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: acoto-gu <acoto-gu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 13:29:48 by acoto-gu          #+#    #+#             */
-/*   Updated: 2023/09/19 16:16:12 by acoto-gu         ###   ########.fr       */
+/*   Updated: 2023/09/25 14:51:24 by acoto-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		n_bytes = 0;
 		start = 0;
 	}
-	substr = (char *)malloc((sizeof(char) * n_bytes) + 1);
+	substr = (char *)malloc(sizeof(char) * (n_bytes + 1));
 	if (!substr)
 		return (NULL);
 	ft_strlcpy(substr, s + start, n_bytes + 1);
