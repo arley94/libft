@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acoto-gu <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: acoto-gu <acoto-gu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 13:57:31 by acoto-gu          #+#    #+#             */
-/*   Updated: 2023/09/17 12:41:54 by acoto-gu         ###   ########.fr       */
+/*   Updated: 2023/09/25 10:58:08 by acoto-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 void	ft_bzero(void *s, size_t n)
 {
 	char	*c;
+	size_t	i;
 
 	c = (char *) s;
-	while (n > 0)
+	i = 0;
+	while (i < n)
 	{
-		*c = 0;
-		c++;
-		n--;
+		c[i++] = 0;
 	}
 }
