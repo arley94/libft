@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acoto-gu <acoto-gu@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: acoto-gu <acoto-gu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 12:51:14 by acoto-gu          #+#    #+#             */
-/*   Updated: 2023/09/18 13:17:00 by acoto-gu         ###   ########.fr       */
+/*   Updated: 2023/09/25 13:19:14 by acoto-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,8 @@ char	*ft_strrchr(const char *s, int c)
 	my_c = (char) c;
 	if (my_c == '\0')
 		return ((char *) s + s_len);
-	while (s_len > 0)
-	{
-		if (s[s_len - 1] == my_c)
-			return ((char *) s + s_len - 1);
-		s_len--;
-	}
+	while (s_len-- > 0)
+		if (s[s_len] == my_c)
+			return ((char *) s + s_len);
 	return (NULL);
 }
