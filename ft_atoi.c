@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acoto-gu <acoto-gu@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: acoto-gu <acoto-gu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 08:46:32 by acoto-gu          #+#    #+#             */
-/*   Updated: 2023/09/19 09:42:53 by acoto-gu         ###   ########.fr       */
+/*   Updated: 2023/09/25 14:39:00 by acoto-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 /*
 	this function checks if the character is \t \n \v \f \c 
 */
-static int	ft_iscontrol(char c)
+static int	ft_isspace(char c)
 {
-	if (9 <= c && c <= 13)
+	if ((9 <= c && c <= 13) || c == ' ')
 		return (1);
 	return (0);
 }
@@ -31,7 +31,7 @@ int	ft_atoi(const char *nptr)
 	number = 0;
 	sign = 1;
 	i = 0;
-	while ((ft_iscontrol(nptr[i]) || nptr[i] == ' ') && nptr[i])
+	while ((ft_isspace(nptr[i])) && nptr[i])
 		i++;
 	if (nptr[i] == '-')
 	{
