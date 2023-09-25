@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acoto-gu <acoto-gu@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: acoto-gu <acoto-gu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 18:26:46 by acoto-gu          #+#    #+#             */
-/*   Updated: 2023/09/18 21:38:11 by acoto-gu         ###   ########.fr       */
+/*   Updated: 2023/09/25 14:27:10 by acoto-gu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,19 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	i;
 	size_t	j;
 
-	i = 0;
-	j = 0;
-	if (!*little)
+	if (!little[0])
 		return ((char *)big);
+	i = 0;
 	while (big[i] && i < len)
 	{
 		if (big[i] == little[0])
 		{
-			while (big[i + j] == little[j] && little[j] && i + j < len)
+			j = 0;
+			while (big[i + j] == little[j] && big[i + j] && little[j]
+				&& i + j < len)
 			{
-				if (!little[j + 1])
-					return ((char *) big + i);
+				if (little[j + 1] == '\0')
+					return ((char *)(big + i));
 				j++;
 			}
 		}
