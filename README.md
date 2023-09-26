@@ -1,29 +1,22 @@
 # Libft - C Standard Library Rewrite
-Remade some of the standard C library functions, plus additional functions that I thought would be useful in future projects.
-By doing this project, I gained a thorough understanding of data structures, and hands-on debugging.
+Remade some of the standard C library functions, plus additional functions that could be useful in future projects. This project is about understanding the way these functions work, implementing and learning to use them.
 
 # Libft Introduction
 
 Libft (Library of Functions)
 
-In this project, you will be creating a library of functions, the file structure for this project is the following:
+The file structure for this project is the following:
 
 ### .c Files 
 Where all of your functions will be written in. 
 
 ### .h (Header)
-Your header file is useful for 2 things:
-- First, instead of doing for example `#include <unistd.h>` in all of your .c files, you just write it once in your header and all of your .c files will read it from your header file. 
-- Secondly, let's say one of your .c files uses another function from another .c file, well instead of writting that function above, just write `#include "libft.h"` and it will find it in your header file. 
+Where all the function prototypes and structures types will be written in.
 
 Make sure you add `#include "libft.h"` in all of your .c files.
 
 ### Makefile 
-Makefile is where you will create a file to compile your projects. Remember how in the piscine, you created an **int main** and **gcc** to compile the projects, well with a Makefile, you don't have to do that anymore, you just type `make` once you have created your Makefile. 
-
-# Great Resource for Libft
-
-https://www.asidesigned.com/project-libft.html 
+Makefile is where you will create a file to compile your projects. 
 
 # Libft Functions
 
@@ -73,18 +66,14 @@ https://www.asidesigned.com/project-libft.html
 
 ### Linked list functions
 
-- [`ft_lstnew`](ft_lstnew.c)	- creates a new list element.
-- [`ft_lstadd_front`](ft_lstadd_front.c)	- adds an element at the beginning of a list.
-- [`ft_lstsize`](ft_lstsize.c)	- counts the number of elements in a list.
-- [`ft_lstlast`](ft_lstlast.c)	- returns the last element of the list.
-- [`ft_lstadd_back`](ft_lstadd_back.c)	- adds an element at the end of a list.
-- [`ft_lstclear`](ft_lstclear.c)	- deletes and free list.
-- [`ft_lstiter`](ft_lstiter.c)	- applies a function to each element of a list.
-- [`ft_lstmap`](ft_lstmap.c)	- applies a function to each element of a list.
-
-
-# Link To Libft Tester
-https://github.com/pasqualerossi/42-Cursus-Tester
+- [`ft_lstnew`](ft_lstnew_bonus.c)	- creates a new list element.
+- [`ft_lstadd_front`](ft_lstadd_front_bonus.c)	- adds an element at the beginning of a list.
+- [`ft_lstsize`](ft_lstsize_bonus.c)	- counts the number of elements in a list.
+- [`ft_lstlast`](ft_lstlast_bonus.c)	- returns the last element of the list.
+- [`ft_lstadd_back`](ft_lstadd_back_bonus.c)	- adds an element at the end of a list.
+- [`ft_lstclear`](ft_lstclear_bonus.c)	- deletes and free list.
+- [`ft_lstiter`](ft_lstiter_bonus.c)	- applies a function to each element of a list.
+- [`ft_lstmap`](ft_lstmap_bonus.c)	- applies a function to each element of a list.
 
 # My Libft Results
 
