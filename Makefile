@@ -50,6 +50,8 @@ OBJ = $(FILES:%=%.o)
 
 B_OBJ = $(B_FILES:%=%.o)
 
+B_NAME = .bonus
+
 NAME = libft.a
 
 $(NAME): $(OBJ)
@@ -57,8 +59,11 @@ $(NAME): $(OBJ)
 
 all: $(NAME)
 
-bonus: $(B_OBJ) $(OBJ)
+$(B_NAME): $(B_OBJ) $(OBJ)
 	ar -rc $(NAME) $^
+	ar -rc $(B_NAME) $^
+
+bonus: $(B_NAME)
 
 clean: 
 	rm -f $(OBJ) $(B_OBJ)
